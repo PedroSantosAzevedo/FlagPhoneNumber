@@ -21,7 +21,7 @@ open class FPNTextField: UITextField {
 	private var flagHeightConstraint: NSLayoutConstraint?
 
 	/// The size of the leftView
-	private var leftViewSize: CGSize {
+    @objc open var leftViewSize: CGSize {
 		let width = flagButtonSize.width + getWidth(text: phoneCodeTextField.text!)
 		let height = bounds.height
 
