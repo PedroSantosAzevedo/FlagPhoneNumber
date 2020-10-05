@@ -28,7 +28,17 @@ open class FPNTextField: UITextField {
 		return CGSize(width: width, height: height)
 	}
 
-	open var phoneCodeTextField: UITextField = UITextField()
+	private var phoneCodeTextField: UITextField = UITextField()
+    
+    @objc open var codeText: String? = nil {
+        didSet {
+            if codeText != nil {
+                self.phoneCodeTextField.text = codeText
+            }
+            
+            layoutIfNeeded()
+        }
+    }
 
 	private lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
 	private var nbPhoneNumber: NBPhoneNumber?
